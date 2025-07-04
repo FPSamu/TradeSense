@@ -77,6 +77,13 @@ docker build -t tradesense-backend .
 docker run -p 8000:8000 tradesense-backend
 ```
 
+## 🧠 Branching Strategy
+- `main` - production-ready code
+- `dev` - integration branch (development baseline)
+- `feature/*` - new features
+- `docs/*` - documentation updates
+- `hotfix/*` - urgent fixes to production code
+
 ### 📡 API Endpoints
 | Method | Endpoint            | Description                      |
 | ------ | ------------------- | -------------------------------- |
