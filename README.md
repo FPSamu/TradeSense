@@ -77,11 +77,47 @@ docker build -t tradesense-backend .
 docker run -p 8000:8000 tradesense-backend
 ```
 
+
 ### 📡 API Endpoints
 | Method | Endpoint            | Description                      |
 | ------ | ------------------- | -------------------------------- |
 | GET    | `/price?symbol=XYZ` | Get real-time price for a symbol |
 | GET    | `/health`           | Check server health              |
+
+## 🧠 Branching Strategy
+- `main` - production-ready code
+- `dev` - integration branch (development baseline)
+- `feature/*` - new features
+- `docs/*` - documentation updates
+- `hotfix/*` - urgent fixes to production code
+
+## 📂 Project structure
+tradesense/
+│
+├── app/
+│   ├── __init__.py
+│   ├── main.py               # Entry point FastAPI
+│   ├── routes/               # Endpoints REST
+│   │   ├── __init__.py
+│   │   └── price_router.py   # Endpoint /price
+│   ├── services/             # APIs connection logics and analysis
+│   │   ├── __init__.py
+│   │   └── price_service.py
+│   ├── models/               # Pydantic schemas, data models
+│   │   ├── __init__.py
+│   │   └── price_model.py
+│   └── utils/                # General auxiliary functions
+│       ├── __init__.py
+│       └── helpers.py
+│
+├── tests/                    # Unitary tests
+│   └── __init__.py
+│
+├── .env
+├── .gitignore
+├── Dockerfile
+├── requirements.txt
+└── README.md
 
 ### 👨‍💻 Author
 Samuel Pia
